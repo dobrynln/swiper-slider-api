@@ -128,6 +128,10 @@ function createTemplate(data) {
       });
     });
   }, 2000);
+  let mobileSlides = document.querySelector(".swiper-slide__item");
+  if (window.screen.width <= 375) {
+    mobileSlides.style.backgroundPositionX = "25%";
+  }
   getParams();
   data.forEach((item) => {
     let buttonsLike = document.querySelectorAll(".btn-like");
@@ -165,54 +169,25 @@ function createTemplate(data) {
   });
   let backgroundSlide = document.querySelectorAll(".swiper-slide__item");
   backgroundSlide.forEach((backSlide) => {
-    backSlide.addEventListener(
-      "touchmove",
-      function (e) {
-        let shiftX =
-          e.changedTouches[0].pageX -
-          getComputedStyle(backSlide)
-            .backgroundPosition.replace(/[^\d\+]/g, "")
-            .substring(0, 1);
-          let res = shiftX/3
-          console.log(res)
-        if (res < 0) {
-          res = 0;
+    backSlide.addEventListener("touchmove", function (e) {
+        let posX = e.changedTouches[0].pageX;
+        let resPosX = posX / 5;
+        if (window.screen.width >= 320 && window.screen.width <= 375) {
+          resPosX = posX / 3;
         }
-        if (res > 100) {
-          res = 100;
+        if (resPosX < 0) {
+          resPosX = 0;
+        } else if(resPosX > 100) {
+          resPosX = 100;
         } else {
-          backSlide.style.backgroundPositionX = res + "%";
+          backSlide.style.backgroundPositionX = resPosX + "%";
         }
-
-        // let touchobj = e.changedTouches[0].pageX
-        // console.log(touchobj)
-
-        // backSlide.style.backgroundPositionX = (imageSlide + dist ) + 'px'
-        // console.log(( (imageSlide + dist > window.screen.width) ? window.screen.width : (imageSlide + dist < 0)? 0 : imageSlide + dist ))
-        // if(imageSlide + dist >= 100) {
-        //   console.log('1', imageSlide - dist)
-        //   //backSlide.style.backgroundPositionX = (imageSlide + dist) + '%'
-        // } else if (imageSlide + dist > 100 ) {
-        //   console.log('2', imageSlide - dist)
-        //   //backSlide.style.backgroundPositionX = ( (imageSlide - dist >= 100)? 100 : imageSlide - dist ) + '%'
-        // } else {
-        //   console.log('3', imageSlide + dist)
-        //   //backSlide.style.backgroundPositionX  = (imageSlide + dist ) + '%'
-        // }
         e.preventDefault();
       },
       false
     );
-    // backSlide.addEventListener("touchmove", (e) => {
-    //   let touches = e.changedTouches;
-    //   let x = touches[0].clientX;
-    //   backSlide.style.backgroundPositionX =
-    //   e.preventDefault()
-    //   return false
-    // });
   });
 }
-// backSlide.style.backgroundPositionX= `${sum[i]}%`
 //Запросы
 function getSlides(url) {
   return axios.get(url);
