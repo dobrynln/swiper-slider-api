@@ -173,7 +173,7 @@ function createTemplate(data) {
           getComputedStyle(backSlide)
             .backgroundPosition.replace(/[^\d\+]/g, "")
             .substring(0, 1);
-          let res = shiftX/5
+          let res = shiftX/3
           console.log(res)
         if (res < 0) {
           res = 0;
@@ -183,7 +183,6 @@ function createTemplate(data) {
         } else {
           backSlide.style.backgroundPositionX = res + "%";
         }
-        backSlide.style.backgroundPositionX = res + "%";
 
         // let touchobj = e.changedTouches[0].pageX
         // console.log(touchobj)
