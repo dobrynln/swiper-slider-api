@@ -1,0 +1,134 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+a,
+button {
+  color: black;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+img {
+  height: auto;
+  display: block;
+}
+label {
+  display: flex;
+  justify-content: center;
+}
+textarea {
+  width: 100%;
+  resize: none;
+  height: 50px;
+  &:focus {
+    border: black;
+  }
+}
+button:active,
+button:focus {
+  outline: none;
+}
+label,
+input,
+textarea {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+.title-h1 {
+  font-size: 132px;
+  text-transform: uppercase;
+  color: #393939;
+}
+body {
+  /* Основной шрифт для страницы */
+  font-family: "NoirProBoldItalic";
+}
+.svg-social {
+  path {
+    &:hover {
+      transition: 0.5s all;
+      fill: #f36a1d;
+    }
+  }
+}
+.slide-button-prev,
+.slide-button-next {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide-button-prev {
+  left: 60px;
+  right: auto;
+  transform: rotate(180deg);
+  svg {
+    &:hover {
+      g {
+        .svg-path {
+          transition: 0.5s all;
+          stroke: #f36a1d;
+        }
+      }
+      defs {
+        linearGradient {
+        	stop {
+            transition: 0.5s all;
+            stop-color: #f36a1d;
+          }
+        }
+      }
+    }
+  }
+}
+.slide-button-next {
+  right: 60px;
+  left: auto;
+  svg {
+    &:hover {
+      g {
+        .svg-path {
+          transition: 0.5s all;
+          stroke: #f36a1d;
+        }
+      }
+      defs {
+        linearGradient {
+        	stop {
+            transition: 0.5s all;
+            stop-color: #f36a1d;
+          }
+        }
+      }
+    }
+  }
+}
+.line-h1 {
+  margin-top: 30px;
+  height: auto !important;
+}

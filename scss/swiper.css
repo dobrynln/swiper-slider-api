@@ -1,0 +1,123 @@
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+.swiper-slide:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: top;
+}
+.swiper-slide .swiper-slide__item {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 65px 0 65px;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-top .logo-bmw {
+  height: auto;
+  width: 60px;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-descr {
+  font-family: "NoirProLight";
+  display: flex;
+  width: 230px;
+  text-align: initial;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #727272;
+  margin-top: 45px;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom {
+  margin-top: auto;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people {
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .btn-like {
+  position: relative;
+  z-index: 1;
+  background-color: #bfbbbb;
+  padding: 15px;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .btn-like:hover {
+  background-color: rgba(243, 106, 29, 0.15);
+  opacity: 0.9;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .btn-like:hover .svg-like path {
+  transition: 0.5s all;
+  fill: #f36a1d;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .btn-like.active-like {
+  background-color: rgba(243, 106, 29, 0.15);
+  opacity: 0.9;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .btn-like.active-like:hover {
+  cursor: no-drop;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .btn-like.active-like .svg-like path {
+  transition: 0.5s all;
+  fill: #f36a1d;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .like-block {
+  margin-top: 10px;
+  color: #727272;
+  font-size: 32px;
+}
+.swiper-slide .swiper-slide__item .swiper-slide__item-bottom .swiper-slide__item-people .like-block .like-block__counter {
+  color: #f36a1d;
+}
+
+.swiper {
+  display: none;
+}
+
+.swiper-slide__item-social {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 65px;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

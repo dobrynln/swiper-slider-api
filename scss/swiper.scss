@@ -1,0 +1,171 @@
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: top;
+  }
+  .swiper-slide__item {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position-x: 1px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 65px 0 65px;
+    .swiper-slide__item-top {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      .logo-bmw {
+        height: auto;
+        width: 60px;
+      }
+      .title-h1 {
+        text-align: left;
+        width: 60%;
+      }
+      .heading-slide {
+        position: relative;
+        &:hover {
+          cursor: pointer;
+        }
+        .heading-slide__hint {
+          font-family: "NoirProLight";
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          font-size: 13px;
+          color: #fff;
+          background-color: #393939;
+          padding: 5px;
+          animation: fadeInOut 5s;
+        }
+      }
+    }
+    .swiper-slide__item-descr {
+      font-family: "NoirProLight";
+      display: flex;
+      width: 230px;
+      text-align: initial;
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #727272;
+      margin-top: 45px;
+    }
+    .swiper-slide__item-bottom {
+      margin-top: auto;
+      .swiper-slide__item-people {
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .btn-like {
+          position: relative;
+          z-index: 1;
+          background-color: #bfbbbb;
+          padding: 15px;
+          &:hover {
+            background-color: rgba(243, 106, 29, 0.15);
+            opacity: 0.9;
+            .svg-like {
+              path {
+                transition: 0.5s all;
+                fill: #f36a1d;
+              }
+            }
+          }
+          &.active-like {
+            background-color: rgba(243, 106, 29, 0.15);
+            opacity: 0.9;
+            &:hover {
+              cursor: no-drop;
+            }
+            .svg-like {
+              path {
+                transition: 0.5s all;
+                fill: #f36a1d;
+              }
+            }
+          }
+        }
+        .like-block {
+          margin-top: 10px;
+          color: #727272;
+          font-size: 32px;
+          .like-block__counter {
+            color: #f36a1d;
+          }
+        }
+      }
+    }
+  }
+}
+.swiper {
+  display: none;
+}
+.swiper-slide__item-social {
+  position: fixed;
+  z-index: 1;
+  bottom: 30px;
+  right: 65px;
+  display: flex;
+  align-items: center;
+}
+.swiper-button-disabled {
+  opacity: 0.5;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-slide-active {
+  .swiper-slide__item {
+    .swiper-slide__item-descr {
+      animation: fadeInOut 5s;
+    }
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
