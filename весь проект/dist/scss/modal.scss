@@ -1,0 +1,45 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.7);
+    .modal-content {
+        background-color: #393939;
+        position: relative;
+        padding: 15px;
+        .title-h2 {
+            color: #727272;
+            margin-right: 40px;
+            word-wrap: break-word;
+        }
+        .content-descr {
+            font-family: "NoirProLight";
+            color: #fff;
+            margin-top: 15px;
+            word-wrap: break-word;
+        }
+        .close-modal {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+        &.modal-show {
+            animation: fadeOutContent 1s ease-in-out forwards;
+        }
+    }
+}
+@keyframes fadeOutContent {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

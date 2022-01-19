@@ -1,0 +1,10 @@
+@import "_libs.scss"; // другие css файлы
+@import "_fonts.scss"; // шрифты
+@import "_global.scss"; // глобальные селекторы
+
+@import "swiper.scss";
+@import "modal.scss";
+
+
+
+@import "_media.scss"; // Для адаптива
