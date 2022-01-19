@@ -284,7 +284,7 @@ function createTemplate(data) {
       let posX = e.changedTouches[0].pageX;
       let resPosX = posX / 5;
 
-      if (window.screen.width >= 320 && window.screen.width <= 375) {
+      if (window.screen.width >= 320 && window.screen.width <= 767) {
         resPosX = posX / 3;
       }
 
